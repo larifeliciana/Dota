@@ -1,0 +1,29 @@
+Matriz onde cada linha(vetor) é uma partida
+ 
+O vetor começa com as informações da partida
+
+"radiant_win", "match_id", "game_mode", "start_time", "duration","first_blood_time", "radiant_score", 
+"dire_score", "tower_status_radiant","tower_status_dire", "barracks_status_radiant", "barracks_status_dire"
+
+
+
+e continua com as informações de todos os jogadores que participaram daquela partida
+
+"hero_id", "level", "player_slot", "account_id", "assists", "gold_per_min", "gold_spent",
+                           "xp_per_min", "kills", "deaths", "last_hits"
+
+
+
+
+
+
+Função para ler o arquivo pk
+
+
+import pickle
+
+def ler(endereco):
+    arq = open(endereco, 'rb')
+    return pickle.load(arq)
+
+vetor = ler('data.pk')
