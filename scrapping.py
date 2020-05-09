@@ -2,6 +2,7 @@ import json
 import pickle
 import bs4
 import requests
+import datetime
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -48,7 +49,6 @@ def get(id,dict):
     code = source_code(url)
 
     dict[id].update({"winrate": [code['win'], code['lose']]})
-#89782335
 
     url = url1 + id + '/heroes?'
     code = source_code(url)
@@ -87,34 +87,3 @@ def ler(endereco):
 def salvar(endereco, lista):
     arq = open(endereco, 'wb')
     pickle.dump(lista, arq)
-
-import datetime
-def a():
-    lista = ler("todos.ids")
-    print(len(lista))
-
-    dict = ler("dicionario (2) (3).pk")
-   # print(dict)
-    print(len(dict.keys()))
-    for i in lista:
-        i = str(i)
-#17467
-        if i not in dict.keys():
-
-                try:
-                    time = datetime.datetime.now()
-                    dict = get(i,dict)
-                    print(datetime.datetime.now() - time)
-                except:
-                    tempo_erro = datetime.datetime.now()
-                   
-                    salvar("dicionario (2) (3).pk", dict)
-                    while(datetime.datetime.now()-tempo_erro).total_seconds() < 30:
-                        continue
-                    a()
-                    break
-
-
-    salvar("dicionario (2) (3).pk", dict)
-
-

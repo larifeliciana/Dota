@@ -1,2 +1,2 @@
-# Dota
-Pesquisa: Web Scrapping do site https://www.opendota.com/ para obetenção de estatísticas de partidas e jogadores de Dota 2 para projeto de Machine Learning em Jogos
+# Dota 2 Matches Data
+Extração e processamento de dados de [Dota 2](https://www.opendota.com/).
